@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[算法--数组篇]]></title>
+    <url>%2F2018%2F05%2F20%2Falgorithm-array%2F</url>
+    <content type="text"><![CDATA[前端开发在平时工作中需要算法的比较少，但是学习数据结构与算法对分析问题是有帮助的，提供一些快速解决问题的思路。这里先总结一些比较经典的算法，做个笔记，会持续更新…… 数组去重12345678910function removeDuplicates(nums) &#123; for (var i = 0; i &lt; nums.length; i++) &#123; var index = nums.indexOf(nums[i], i + 1); if (index &gt; -1) &#123; nums.splice(index, 1) i--; // 上一步使数组长度缩短了 &#125; &#125; return nums&#125; 数组打乱1234567891011121314function getRandomInt(min, max) &#123; return Math.floor(Math.random() * (max - min + 1) + min);&#125;function shuffle(arr) &#123; var _arr = arr.slice(); for (var i = 0; i &lt; _arr.length; i++) &#123; var r = getRandomInt(0, i); var t = _arr[i]; _arr[i] = _arr[r]; _arr[r] = t; &#125; return _arr;&#125; 冒泡排序123456789101112function bubbleSort(nums) &#123; for (var i = 0; i &lt; nums.length - 1; i++) &#123; for (var j = 0; j &lt; nums.length - 1 - i; j++) &#123; if (nums[j] &gt; nums[j + 1]) &#123; var t = nums[j] nums[j] = nums[j + 1] nums[j + 1] = t &#125; &#125; &#125; return nums&#125; 快速排序1234567891011121314151617function quickSort(arr) &#123; if (arr.length &lt;= 1) &#123; return arr &#125; var pivotIndex = Math.floor(arr.length / 2) var pivot = arr.splice(pivotIndex, 1)[0] var left = [] var right = [] for (var i = 0; i &lt; arr.length; i++) &#123; if (arr[i] &lt; pivot) &#123; left.push(arr[i]); &#125; else &#123; right.push(arr[i]); &#125; &#125; return quickSort(left).concat([pivot], quickSort(right)); &#125; 选择排序1234567891011121314function selectionSort(arr) &#123; for (var i = 0; i &lt; arr.length; i++) &#123; var minIndex = i; for (var j = i + 1; j &lt; arr.length; j++) &#123; if (arr[j] &lt; arr[minIndex]) &#123; minIndex = j; &#125; &#125; var temp = arr[i]; arr[i] = arr[minIndex]; arr[minIndex] = temp; &#125; return arr;&#125; 买卖股票112345678910// 假设有一个数组，它的第i个元素是一支给定的股票在第i天的价格。如果你最多只允许完成一次交易(例如,一次买卖股票),设计一个算法来找出最大利润。function maxProfit1() &#123; let low = prices[0]; let max = 0; for (let i = 1; i &lt; prices.length; i++) &#123; max = Math.max(max, prices[i] - low); low = Math.min(prices[i], low) &#125; console.log(max) &#125; 买卖股票21234567891011121314151617 // 假设有一个数组，它的第i个元素是一个给定的股票在第i天的价格。设计一个算法来找到最大的利润。你可以完成尽可能多的交易(多次买卖股票)。然而,你不能同时参与多个交易(你必须在再次购买前出售股票)。function maxProfit2() &#123; let begin = prices[0]; let end = prices[0]; let sum = 0; for (let i = 0; i &lt; prices.length; i++) &#123; if (prices[i] &gt; end) &#123; end = prices[i]; &#125; else &#123; sum = sum + end - begin begin = prices[i]; end = prices[i]; &#125; &#125; sum = sum + end - begin console.log(sum)&#125;]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面试题 -- Javascript]]></title>
+    <url>%2F2018%2F05%2F20%2Finterview%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+</search>
