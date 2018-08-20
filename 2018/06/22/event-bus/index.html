@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。">
+<meta name="description" content="在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。">
 <meta name="keywords" content="mpvue,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建全局事件（global event bus  ）">
 <meta property="og:url" content="http://yoursite.com/2018/06/22/event-bus/index.html">
 <meta property="og:site_name" content="Airoy">
-<meta property="og:description" content="最近在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。">
+<meta property="og:description" content="在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T08:07:39.906Z">
+<meta property="og:updated_time" content="2018-08-20T12:39:11.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建全局事件（global event bus  ）">
-<meta name="twitter:description" content="最近在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。">
+<meta name="twitter:description" content="在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。">
 
 
 
@@ -344,7 +344,7 @@
       
 
       
-        <p>最近在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。<a id="more"></a>第一个想法是用vuex来管理所有想要变动的数据，尝试后发现得重复的写各种方法和数据，不太适用小程序。<br>在看vuex的官网看到了这么一段话:</p>
+        <p>在使用美团的开源框架mpvue开发小程序，遇到一个页面直接相互调用方法的问题，以前小程序原生写法是通过getCurrentPage()来获取页面Page对象来使用已经定义的方法，在用mpvue后，发现无法使用getCurrentPage()来获取了，决定另辟蹊径。<a id="more"></a>第一个想法是用vuex来管理所有想要变动的数据，尝试后发现得重复的写各种方法和数据，不太适用小程序。<br>在看vuex的官网看到了这么一段话:</p>
 <blockquote>
 <p>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 <strong>global event bus</strong> 就足够您所需了。(<a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener">https://vuex.vuejs.org/zh/</a>)</p>
 </blockquote>
