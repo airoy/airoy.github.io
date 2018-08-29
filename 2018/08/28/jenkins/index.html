@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法," />
+  <meta name="keywords" content="jenkins," />
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="前端开发在平时工作中需要算法的比较少，但是学习数据结构与算法对分析问题是有帮助的，提供一些快速解决问题的思路。这里先总结一些比较经典的算法，做个笔记，会持续更新……">
-<meta name="keywords" content="算法">
+<meta name="description" content="部署node环境使用二进制文件安装该部署过程使用的安装包是已编译好的二进制文件，解压之后，在bin文件夹中就已存在node和npm，无需手工编译。">
+<meta name="keywords" content="jenkins">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法--数组篇">
-<meta property="og:url" content="http://yoursite.com/2018/05/20/algorithm-array/index.html">
+<meta property="og:title" content="vue自动化部署">
+<meta property="og:url" content="http://yoursite.com/2018/08/28/jenkins/index.html">
 <meta property="og:site_name" content="Airoy">
-<meta property="og:description" content="前端开发在平时工作中需要算法的比较少，但是学习数据结构与算法对分析问题是有帮助的，提供一些快速解决问题的思路。这里先总结一些比较经典的算法，做个笔记，会持续更新……">
+<meta property="og:description" content="部署node环境使用二进制文件安装该部署过程使用的安装包是已编译好的二进制文件，解压之后，在bin文件夹中就已存在node和npm，无需手工编译。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-21T06:17:44.121Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/28/jenkins/jenkins/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/28/jenkins/jenkins/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/28/jenkins/jenkins/3.png">
+<meta property="og:updated_time" content="2018-08-29T13:19:32.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法--数组篇">
-<meta name="twitter:description" content="前端开发在平时工作中需要算法的比较少，但是学习数据结构与算法对分析问题是有帮助的，提供一些快速解决问题的思路。这里先总结一些比较经典的算法，做个笔记，会持续更新……">
+<meta name="twitter:title" content="vue自动化部署">
+<meta name="twitter:description" content="部署node环境使用二进制文件安装该部署过程使用的安装包是已编译好的二进制文件，解压之后，在bin文件夹中就已存在node和npm，无需手工编译。">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/28/jenkins/jenkins/1.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/20/algorithm-array/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/28/jenkins/"/>
 
 
 
 
 
-  <title>算法--数组篇 | Airoy</title>
+  <title>vue自动化部署 | Airoy</title>
   
 
 
@@ -272,12 +276,12 @@
   
   
 
-  <article class="post post-type-javascript" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/algorithm-array/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/jenkins/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roy Lee">
@@ -294,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法--数组篇</h1>
+          <h1 class="post-title" itemprop="name headline">vue自动化部署</h1>
         
 
         <div class="post-meta">
@@ -306,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T21:08:48+08:00">
-                2018-05-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T09:47:54+08:00">
+                2018-08-28
               </time>
             
 
@@ -344,15 +348,101 @@
       
 
       
-        <p>前端开发在平时工作中需要算法的比较少，但是学习数据结构与算法对分析问题是有帮助的，提供一些快速解决问题的思路。这里先总结一些比较经典的算法，做个笔记，会持续更新……<br><a id="more"></a></p>
-<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeDuplicates</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> index = nums.indexOf(nums[i], i + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (index &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            nums.splice(index, <span class="number">1</span>)</span><br><span class="line">            i--; <span class="comment">// 上一步使数组长度缩短了</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="数组打乱"><a href="#数组打乱" class="headerlink" title="数组打乱"></a>数组打乱</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomInt</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>) + min);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffle</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _arr = arr.slice();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; _arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> r = getRandomInt(<span class="number">0</span>, i);</span><br><span class="line">        <span class="keyword">var</span> t = _arr[i];</span><br><span class="line">        _arr[i] = _arr[r];</span><br><span class="line">        _arr[r] = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; nums.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">var</span> t = nums[j]</span><br><span class="line">                nums[j] = nums[j + <span class="number">1</span>]</span><br><span class="line">                nums[j + <span class="number">1</span>] = t</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">var</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">var</span> left = []</span><br><span class="line">    <span class="keyword">var</span> right = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">            left.push(arr[i]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[minIndex]) &#123;</span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">        arr[i] = arr[minIndex];</span><br><span class="line">        arr[minIndex] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="买卖股票1"><a href="#买卖股票1" class="headerlink" title="买卖股票1"></a>买卖股票1</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设有一个数组，它的第i个元素是一支给定的股票在第i天的价格。如果你最多只允许完成一次交易(例如,一次买卖股票),设计一个算法来找出最大利润。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxProfit1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> low = prices[<span class="number">0</span>];</span><br><span class="line">     <span class="keyword">let</span> max = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">         max = <span class="built_in">Math</span>.max(max, prices[i] - low);</span><br><span class="line">         low = <span class="built_in">Math</span>.min(prices[i], low)</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">console</span>.log(max)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="买卖股票2"><a href="#买卖股票2" class="headerlink" title="买卖股票2"></a>买卖股票2</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 假设有一个数组，它的第i个元素是一个给定的股票在第i天的价格。设计一个算法来找到最大的利润。你可以完成尽可能多的交易(多次买卖股票)。然而,你不能同时参与多个交易(你必须在再次购买前出售股票)。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxProfit2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> begin = prices[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">let</span> end = prices[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (prices[i] &gt; end) &#123;</span><br><span class="line">            end = prices[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            sum = sum + end - begin</span><br><span class="line">            begin = prices[i];</span><br><span class="line">            end = prices[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum = sum + end - begin</span><br><span class="line">    <span class="built_in">console</span>.log(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h2 id="部署node环境"><a href="#部署node环境" class="headerlink" title="部署node环境"></a>部署node环境</h2><h3 id="使用二进制文件安装"><a href="#使用二进制文件安装" class="headerlink" title="使用二进制文件安装"></a>使用二进制文件安装</h3><p>该部署过程使用的安装包是已编译好的二进制文件，解压之后，在bin文件夹中就已存在node和npm，无需手工编译。<br> <a id="more"></a><br>安装步骤：</p>
+<ol>
+<li><p>wget命令下载Node.js安装包。该安装包是编译好的文件，解压之后，在bin文件夹中就已存在node和npm，无需重复编译。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v6.9.5/node-v6.9.5-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v6.9.5-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建软链接，使node和npm命令全局有效。通过创建软链接的方法，使得在任意目录下都可以直接使用node和npm命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /root/node-v6.9.5-linux-x64/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /root/node-v6.9.5-linux-x64/bin/npm /usr/local/bin/npm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看node. npm版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>至此，Node.js环境已安装完毕。软件默认安装在/root/node-v6.9.5-linux-x64/目录下。如果需要将该软件安装到其他目录（如：/opt/node/）下，请进行如下操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/node/</span><br><span class="line">mv /root/node-v6.9.5-linux-x64/* /opt/node/</span><br><span class="line">rm -f /usr/local/bin/node</span><br><span class="line">rm -f /usr/local/bin/npm</span><br><span class="line">ln -s /opt/node/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /opt/node/bin/npm /usr/local/bin/npm</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="搭建git服务器"><a href="#搭建git服务器" class="headerlink" title="搭建git服务器"></a>搭建git服务器</h2><ol>
+<li><p>安装git<br>服务器端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#yum install -y git</span><br></pre></td></tr></table></figure>
+<p>安装完后，查看 Git 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# git --version</span><br><span class="line">git version 1.7.1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务器端创建 git 用户，用来管理 Git 服务，并为 git 用户设置密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 查询用户</span><br><span class="line">[root@localhost home]# id git</span><br><span class="line">id: git：无此用户</span><br><span class="line">[root@localhost home]# useradd git</span><br><span class="line">[root@localhost home]# passwd git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>useradd命令用于Linux中创建的新的系统用户。useradd可用来建立用户帐号。帐号建好之后，再用passwd设定帐号的密码．而可用userdel删除帐号。使用useradd指令所建立的帐号，实际上是保存在/etc/passwd文本文件中。</p>
+</blockquote>
+</li>
+<li><p>服务器端创建 Git 仓库<br>设置 /home/git-repository/test.git 为 Git 仓库<br>然后把 Git 仓库的 owner 修改为 git</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost home]<span class="comment"># mkdir -p git-repository/test.git</span></span><br><span class="line">[root@localhost home]<span class="comment"># git init --bare git-repository/test.git</span></span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> /home/git-repository/test.git/</span><br><span class="line">[root@localhost home]<span class="comment"># cd git-repository/</span></span><br><span class="line">[root@localhost git]<span class="comment"># chown -R git:git test.git/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>客户端 clone 远程仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> ssh://git@192.168.1.101:8088/home/git-repository/test.git/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当第一次连接到目标 Git 服务器时会得到一个提示：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;192.168.56.101 (192.168.56.101)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is SHA256:Ve6WV/SCA059EqoUOzbFoZdfmMh3B259nigfmvdadqQ.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+<p>选择 yes：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Permanently added &apos;192.168.56.101&apos; (RSA) to the list of known hosts.</span><br></pre></td></tr></table></figure>
+<p>此时 C:\Users\用户名.ssh 下会多出一个文件 known_hosts，以后在这台电脑上再次连接目标 Git 服务器时不会再提示上面的语句<br><img src="./jenkins/1.png" alt="image"><br>后面提示要输入密码，可以采用 SSH 公钥来进行验证。</p>
+</li>
+<li><p>客户端创建 SSH 公钥和私钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"*****@qq.com"</span></span><br></pre></td></tr></table></figure>
+<p><img src="./jenkins/2.png" alt="image"><br>此时 C:\Users\用户名.ssh 下会多出两个文件 id_rsa 和 id_rsa.pub</p>
+<p>id_rsa 是私钥</p>
+<p>id_rsa.pub 是公钥<br><img src="./jenkins/3.png" alt="image"></p>
+</li>
+<li><p>服务器端 Git 打开 RSA 认证<br>进入 /etc/ssh 目录，编辑 sshd_config，打开以下三个配置的注释：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p>保存并重启 sshd 服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ssh]<span class="comment"># /etc/rc.d/init.d/sshd restart</span></span><br></pre></td></tr></table></figure>
+<p>由 AuthorizedKeysFile 得知公钥的存放路径是 .ssh/authorized_keys，实际上是 $Home/.ssh/authorized_keys，由于管理 Git 服务的用户是 git，所以实际存放公钥的路径是 /home/git/.ssh/authorized_keys</p>
+<p>在 /home/git/ 下创建目录 .ssh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost git]<span class="comment"># pwd</span></span><br><span class="line">/home/git</span><br><span class="line">[root@localhost git]<span class="comment"># mkdir .ssh</span></span><br><span class="line">[root@localhost git]<span class="comment"># ls -a </span></span><br><span class="line">. .. .bash_logout .bash_profile .bashrc .gnome2 .mozilla .ssh</span><br></pre></td></tr></table></figure>
+<p>然后把 .ssh 文件夹的 owner 修改为 git</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[root@localhost git]<span class="comment"># chown -R git:git .ssh</span></span><br><span class="line">[root@localhost git]<span class="comment"># ll -a</span></span><br><span class="line">总用量 32</span><br><span class="line">drwx------. 5 git  git  4096 8月  28 20:04 .</span><br><span class="line">drwxr-xr-x. 8 root root 4096 8月  28 19:32 ..</span><br><span class="line">-rw-r--r--. 1 git  git    18 10月 16 2014 .bash_logout</span><br><span class="line">-rw-r--r--. 1 git  git   176 10月 16 2014 .bash_profile</span><br><span class="line">-rw-r--r--. 1 git  git   124 10月 16 2014 .bashrc</span><br><span class="line">drwxr-xr-x. 2 git  git  4096 11月 12 2010 .gnome2</span><br><span class="line">drwxr-xr-x. 4 git  git  4096 5月   8 12:22 .mozilla</span><br><span class="line">drwxr-xr-x. 2 git  git  4096 8月  28 20:08 .ssh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将客户端公钥导入服务器端 /home/git/.ssh/authorized_keys 文件<br>回到 Git Bash 下，导入文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh git@192.168.56.101 <span class="string">'cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>需要输入服务器端 git 用户的密码</p>
+<p>回到服务器端，查看 .ssh 下是否存在 authorized_keys 文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost git]<span class="comment"># cd .ssh</span></span><br><span class="line">[root@localhost .ssh]<span class="comment"># ll</span></span><br><span class="line">总用量 4</span><br><span class="line">-rw-rw-r--. 1 git git 398 8月  28 20:08 authorized_keys</span><br></pre></td></tr></table></figure>
+<p>可以查看一下是否是客户端生成的公钥。</p>
+<p>重要：</p>
+<p>修改 .ssh 目录的权限为 700</p>
+<p>修改 .ssh/authorized_keys 文件的权限为 600</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost git]<span class="comment"># chmod 700 .ssh</span></span><br><span class="line">[root@localhost git]<span class="comment"># cd .ssh</span></span><br><span class="line">[root@localhost .ssh]<span class="comment"># chmod 600 authorized_keys</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Jenkins使用"><a href="#Jenkins使用" class="headerlink" title="Jenkins使用"></a>Jenkins使用</h2><h3 id="git-仓库为ssh地址"><a href="#git-仓库为ssh地址" class="headerlink" title="git 仓库为ssh地址"></a>git 仓库为ssh地址</h3><p>需要加入秘钥</p>
+<h3 id="给Jenkins使用root权限执行脚本"><a href="#给Jenkins使用root权限执行脚本" class="headerlink" title="给Jenkins使用root权限执行脚本"></a>给Jenkins使用root权限执行脚本</h3><ol>
+<li><p>将jenkins账号分别加入到root组中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpasswd -a root jenkins</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改/etc/sysconfig/jenkins文件中，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JENKINS_USER=root</span><br><span class="line">JENKINS_GROUP=root</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>可以修改为root权限运行</p>
+<ol start="3">
+<li><p>重启Jenkins</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service Jenkins restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证<br>在Jenkins中的shell脚本中执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="jenkins执行shell脚本（npm-command-not-found）"><a href="#jenkins执行shell脚本（npm-command-not-found）" class="headerlink" title="jenkins执行shell脚本（npm: command not found）"></a>jenkins执行shell脚本（npm: command not found）</h3><ul>
+<li>安装 node plugin</li>
+<li>配置服务器环境变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// vim /etc/profile</span><br><span class="line"><span class="built_in">export</span> NODE_HOME=/root/node-v6.9.5-linux-x64</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$NODE_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"安装！"</span></span><br><span class="line">npm install</span><br><span class="line">sleep 1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"编译！"</span></span><br><span class="line">npm run build || &#123; <span class="built_in">echo</span> <span class="string">"编译失败！"</span>; <span class="built_in">exit</span> 1; &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -369,7 +459,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/jenkins/" rel="tag"># jenkins</a>
           
         </div>
       
@@ -382,14 +472,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/22/event-bus/" rel="next" title="创建全局事件（global event bus  ）">
+                <i class="fa fa-chevron-left"></i> 创建全局事件（global event bus  ）
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/22/event-bus/" rel="prev" title="创建全局事件（global event bus  ）">
-                创建全局事件（global event bus  ） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/29/nvm/" rel="prev" title="安装node版本管理工具-NVM">
+                安装node版本管理工具-NVM <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -516,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组去重"><span class="nav-number">1.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组打乱"><span class="nav-number">2.</span> <span class="nav-text">数组打乱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">3.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">4.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择排序"><span class="nav-number">5.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#买卖股票1"><span class="nav-number">6.</span> <span class="nav-text">买卖股票1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#买卖股票2"><span class="nav-number">7.</span> <span class="nav-text">买卖股票2</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署node环境"><span class="nav-number">1.</span> <span class="nav-text">部署node环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用二进制文件安装"><span class="nav-number">1.1.</span> <span class="nav-text">使用二进制文件安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建git服务器"><span class="nav-number">2.</span> <span class="nav-text">搭建git服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins使用"><span class="nav-number">3.</span> <span class="nav-text">Jenkins使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-仓库为ssh地址"><span class="nav-number">3.1.</span> <span class="nav-text">git 仓库为ssh地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给Jenkins使用root权限执行脚本"><span class="nav-number">3.2.</span> <span class="nav-text">给Jenkins使用root权限执行脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jenkins执行shell脚本（npm-command-not-found）"><span class="nav-number">3.3.</span> <span class="nav-text">jenkins执行shell脚本（npm: command not found）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell脚本"><span class="nav-number">3.4.</span> <span class="nav-text">shell脚本</span></a></li></ol></li></ol></div>
             
 
           </div>
